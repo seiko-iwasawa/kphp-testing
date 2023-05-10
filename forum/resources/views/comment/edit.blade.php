@@ -15,6 +15,10 @@
                         @csrf
                         @method('PUT')
                         <div class="row">
+                            <div class="control-group col-12">
+                                <label for="parent_id">Answer to</label>
+                                <textarea id="parent_id" class="form-control" name="parent_id" placeholder="Enter Parent ID" rows="1" required>{{ $comment->parent_id }}</textarea>
+                            </div>
                             <div class="control-group col-12 mt-2">
                                 <label for="message">Message</label>
                                 <textarea id="message" class="form-control" name="message" placeholder="Enter Message" rows="5" required>{{ $comment->message }}</textarea>

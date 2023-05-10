@@ -33,6 +33,7 @@ class CommentController extends Controller
     {
         $newComment = Comment::create([
             'user_id' => 1,
+            'parent_id' => $request->parent_id,
             'message' => $request->message,
         ]);
 
@@ -55,6 +56,7 @@ class CommentController extends Controller
     public function edit(Comment $comment)
     {
         return view('comment.edit', [
+            'parent_id' => $comment->parent_id,
             'comment' => $comment
         ]);
     }
@@ -65,6 +67,7 @@ class CommentController extends Controller
     public function update(Request $request, Comment $comment)
     {
         $comment->update([
+            'parent_id' => $request->parent_id,
             'message' => $request->message
         ]);
 

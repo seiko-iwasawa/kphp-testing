@@ -18,6 +18,7 @@ class CommentFactory extends Factory
     {
         return [
             'user_id' => \App\Models\User::factory(),
+            'parent_id' => 0,
             'message' => $this->faker->sentence
         ];
     }

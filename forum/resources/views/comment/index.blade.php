@@ -13,7 +13,7 @@
                         <a href="/comment/create/comment" class="btn btn-primary btn-sm">Add Comment</a>
                     </div>
                 </div>
-                @forelse($comments as $comment)
+                @forelse($comments->reverse() as $comment)
                     <ul style="list-style: none;">
                         <li><a href="./comment/{{ $comment->id }}">{{ $comment->message }}</a></li>
                     </ul>
