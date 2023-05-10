@@ -23,7 +23,7 @@ class CommentController extends Controller
      */
     public function create()
     {
-        //
+        return view('comment.create');
     }
 
     /**
@@ -31,7 +31,12 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $newMessage = Comment::create([
+            'user_id' => 1,
+            'message' => $request->body,
+        ]);
+
+        return redirect('comments/' . $newMessage->id);
     }
 
     /**
