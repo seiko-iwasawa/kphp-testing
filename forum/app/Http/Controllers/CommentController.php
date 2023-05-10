@@ -31,12 +31,12 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-        $newMessage = Comment::create([
+        $newComment = Comment::create([
             'user_id' => 1,
-            'message' => $request->body,
+            'message' => $request->message,
         ]);
 
-        return redirect('comments/' . $newMessage->id);
+        return redirect('comment/' . $newComment->id);
     }
 
     /**
@@ -65,10 +65,10 @@ class CommentController extends Controller
     public function update(Request $request, Comment $comment)
     {
         $comment->update([
-            'message' => $request->body
+            'message' => $request->message
         ]);
 
-        return redirect('comments/' . $comment->id);
+        return redirect('comment/' . $comment->id);
     }
 
     /**
@@ -78,6 +78,6 @@ class CommentController extends Controller
     {
         $comment->delete();
 
-        return redirect('/comments');
+        return redirect('/comment');
     }
 }

@@ -17,16 +17,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/comments', [\App\Http\Controllers\CommentController::class, 'index']);
+Route::get('/comment', [\App\Http\Controllers\CommentController::class, 'index']);
 
-Route::get('/comments/{comment}', [\App\Http\Controllers\CommentController::class, 'show']);
+Route::get('/comment/{comment}', [\App\Http\Controllers\CommentController::class, 'show']);
 
-Route::get('/comments/create/comment', [\App\Http\Controllers\CommentController::class, 'create']);
+Route::get('/comment/create/comment', [\App\Http\Controllers\CommentController::class, 'create']);
 
-Route::post('/comments/create/comment', [\App\Http\Controllers\CommentController::class, 'store']);
+Route::post('/comment/create/comment', [\App\Http\Controllers\CommentController::class, 'store']);
 
-Route::get('/comments/{comment}/edit', [\App\Http\Controllers\CommentController::class, 'edit']);
+Route::get('/comment/{comment}/edit', [\App\Http\Controllers\CommentController::class, 'edit']);
 
-Route::put('/comments/{comment}/edit', [\App\Http\Controllers\CommentController::class, 'update']);
+Route::put('/comment/{comment}/edit', [\App\Http\Controllers\CommentController::class, 'update']);
 
-Route::delete('/comments/{comment}', [\App\Http\Controllers\CommentController::class, 'destroy']);
+Route::delete('/comment/{comment}', [\App\Http\Controllers\CommentController::class, 'destroy']);

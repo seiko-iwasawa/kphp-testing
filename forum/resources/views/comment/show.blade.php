@@ -3,11 +3,11 @@
     <div class="container">
         <div class="row">
             <div class="col-12 pt-2">
-                <a href="/comments" class="btn btn-outline-primary btn-sm">Go back</a>
+                <a href="/comment" class="btn btn-outline-primary btn-sm">Go back</a>
                 <br><br>
                 <p>{!! $comment->message !!}</p> 
                 <hr>
-                <a href="/comments/{{ $comment->id }}/edit" class="btn btn-outline-primary">Edit Message</a>
+                <a href="/comment/{{ $comment->id }}/edit" class="btn btn-outline-primary">Edit Comment</a>
                 <br><br>
                 <form id="delete-frm" class="" action="" method="POST">
                     @method('DELETE')

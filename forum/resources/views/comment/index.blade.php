@@ -6,16 +6,16 @@
                 <div class="row">
                     <div class="col-8">
                         <h1 class="display-one">Our Forum!</h1>
-                        <p>See the last comments:</p>
+                        <p>See the latest comments:</p>
                     </div>
                     <div class="col-4">
-                        <p>Create new Message</p>
-                        <a href="/comments/create/comment" class="btn btn-primary btn-sm">Add Message</a>
+                        <p>Create new Comment</p>
+                        <a href="/comment/create/comment" class="btn btn-primary btn-sm">Add Comment</a>
                     </div>
                 </div>
                 @forelse($comments as $comment)
                     <ul style="list-style: none;">
-                        <li><a href="./comments/{{ $comment->id }}">{{ $comment->message }}</a></li>
+                        <li><a href="./comment/{{ $comment->id }}">{{ $comment->message }}</a></li>
                     </ul>
                 @empty
                     <p class="text-warning">No Comments available</p>
