@@ -54,7 +54,9 @@ class CommentController extends Controller
      */
     public function edit(Comment $comment)
     {
-        //
+        return view('comment.edit', [
+            'comment' => $comment
+        ]);
     }
 
     /**
@@ -62,7 +64,11 @@ class CommentController extends Controller
      */
     public function update(Request $request, Comment $comment)
     {
-        //
+        $comment->update([
+            'message' => $request->body
+        ]);
+
+        return redirect('comments/' . $comment->id);
     }
 
     /**
